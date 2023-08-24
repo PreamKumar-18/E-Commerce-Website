@@ -1,0 +1,58 @@
+const Offer = [
+  {
+    id: 1,
+    title: "Women Khadi Cotton Kurta, Pant And Dupatta Set",
+    colour: "White and Purple",
+    price: 999,
+    offer: "59%",
+    img: "https://rukminim2.flixcart.com/image/612/612/xif0q/ethnic-set/3/n/v/m-k22566-chikuwine-the-hope-original-imagrt9kzfk3mdbr.jpeg?q=70",
+    amount: 1,
+  },
+  {
+    id: 2,
+    title: "Women Printed Cotton Blend Flared Kurta  (Beige)",
+    colour: "Pink",
+    price: 375,
+    offer: "74%",
+    img: "https://rukminim2.flixcart.com/image/612/612/xif0q/kurta/a/7/r/xs-kff00295-jenifer-peach-shrivani-original-imagmfzdczna3kek.jpeg?q=70",
+    amount: 1,
+  },
+  {
+    id: 3,
+    title: "Women Silk Blend Ethnic Jacket, Kurta and Pant Set",
+    colour: "Light Grey",
+    price: 999,
+    offer: "41%",
+    img: "https://rukminim2.flixcart.com/image/612/612/l0wrafk0/ethnic-set/i/y/m/xxl-ssf-k39-shree-shital-print-original-imagchg3r6xmfee3.jpeg?q=70",
+    amount: 1,
+  },
+  {
+    id: 4,
+    title: "Women Printed Pure Cotton Straight Kurta ",
+    colour: "Blue",
+    price: 299,
+    offer: "70%",
+    img: "https://rukminim2.flixcart.com/image/612/612/kr9jafk0/kurta/x/r/c/xl-kr497d-metro-fashion-original-imag537eefpxmbxp.jpeg?q=70",
+    amount: 1,
+  },
+  {
+    id: 5,
+    title: "Women Cotton Blend Kurta and Pant Set",
+    colour: "Purple With White",
+    price: 999,
+    offer: "80%",
+    img: "https://rukminim2.flixcart.com/image/612/612/xif0q/ethnic-set/k/s/b/l-tr-prashant-trahimam-original-imagg6gryjfjzrsk.jpeg?q=70",
+    amount: 1,
+  },
+  {
+    id: 6,
+    title: "Women Bandhani Georgette Anarkali Kurta",
+    colour: "Purple",
+    price: 735,
+    offer: "80%",
+    img: "https://rukminim2.flixcart.com/image/612/612/xif0q/kurta/c/a/5/m-bandhani-kurti-pmd-fashion-original-imagn26ckmjujmjq.jpeg?q=70",
+    amount: 1,
+  },
+];
+
+export default Offer;
