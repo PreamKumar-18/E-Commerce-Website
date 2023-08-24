@@ -6,6 +6,7 @@ const Cart = ({
   removeFromCart,
   increaseQuantity,
   decreaseQuantity,
+  setCartVisible,
 }) => {
   return (
     <div className="container">
@@ -43,8 +44,10 @@ const Cart = ({
                 <div>Subtotal: ₹{product.price * product.quantity} </div>
                 <button
                   onClick={() => {
-                    console.log(product);
                     removeFromCart(product);
+                    if (cart.length === 1) {
+                      setCartVisible(false);
+                    }
                   }}
                   className="btn btn-primary"
                 >

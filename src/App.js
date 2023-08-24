@@ -13,6 +13,7 @@ import Offers from "./Offers";
 function App() {
   const [cart, setCart] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [cartVisible, setCartVisible] = useState(false);
 
   const addToCart = (product) => {
     setCart([...cart, product]);
@@ -36,7 +37,7 @@ function App() {
   const removeFromCart = (product) => {
     const updatedCart = cart.filter((item) => item.id !== product.id);
     setCart(updatedCart);
-    setTotalPrice(totalPrice - product.price * product.quantity); // Subtract the total price of removed items
+    setTotalPrice(totalPrice - product.price * product.quantity); 
   };
   const increaseQuantity = (product) => {
     const updatedCart = cart.map((item) =>
@@ -58,8 +59,17 @@ function App() {
   };
   return (
     <div className="App">
-      <Navbar cart={cart} totalPrice={totalPrice} />
-
+      <Navbar setCartVisible={setCartVisible} cartVisible={cartVisible} />
+      {cartVisible && (
+        <Cart
+          cart={cart}
+          totalPrice={totalPrice}
+          removeFromCart={removeFromCart}
+          increaseQuantity={increaseQuantity}
+          decreaseQuantity={decreaseQuantity}
+          setCartVisible={setCartVisible}
+        />
+      )}
       <Router>
         <div className="App">
           <Routes>
@@ -75,58 +85,14 @@ function App() {
               path="/party"
               element={<PartyWears addToCart={addToCart} />}
             />
-            <Route
-              path="/offer"
-              element={<Offers addToCart={addToCart} />}
-            />
+            <Route path="/offer" element={<Offers addToCart={addToCart} />} />
           </Routes>
         </div>
         <br></br>
         <br></br>
-
-        <Routes>
-        <Route
-          path="/new-arrivals"
-          element={
-            <Cart
-              cart={cart}
-              totalPrice={totalPrice}
-              removeFromCart={removeFromCart}
-              increaseQuantity={increaseQuantity}
-              decreaseQuantity={decreaseQuantity}
-            />
-          }
-        />
-        <Route
-          path="/party"
-          element={
-            <Cart
-              cart={cart}
-              totalPrice={totalPrice}
-              removeFromCart={removeFromCart}
-              increaseQuantity={increaseQuantity}
-              decreaseQuantity={decreaseQuantity}
-            />
-          }
-        />
-        <Route
-          path="/offer"
-          element={
-            <Cart
-              cart={cart}
-              totalPrice={totalPrice}
-              removeFromCart={removeFromCart}
-              increaseQuantity={increaseQuantity}
-              decreaseQuantity={decreaseQuantity}
-            />
-          }
-        />
-      </Routes>
+      </Router>
 
       <Footer />
-      </Router>
-      
-      
     </div>
   );
 }
